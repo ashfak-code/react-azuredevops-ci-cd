@@ -42,7 +42,7 @@ stages:
   jobs:
   - job: Deploy
     pool:
-      vmImage: 'windows-latest'
+      vmImage: 'vs2017-win2016'
 
     steps:
     - task: DownloadBuildArtifacts@0
@@ -57,7 +57,7 @@ stages:
         azureSubscription: 'Free Trial (f32358fd-a007-4679-ba8b-94307357e9e2)'
         appType: 'webApp'
         WebAppName: 'ashfakkk'
-        packageForLinux: '$(System.ArtifactsDirectory)/*.zip'
+        packageForLinux: '$(System.ArtifactsDirectory)/**/*.zip'
 
 
 
